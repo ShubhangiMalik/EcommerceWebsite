@@ -63,7 +63,7 @@ if(process.env.NODE_ENV == "production"){
          res.sendFile(path.join(__dirname, 'ecommerce-front', 'build' , 'index.html'))
      })
      }else{
-        app.get('/' , (req,res) => {
+        app.get('/api' , (req,res) => {
             res.send("Api running")
         })
 }
