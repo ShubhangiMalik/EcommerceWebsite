@@ -54,10 +54,10 @@ const Cart = () => {
         >
             
           <div className="row justify-content-around">
-              <div className="col-5">
+              <div className="col-12 col-lg-5">
                   {items.length > 0 ? showItems(items) : noItemsMessage()}
               </div>
-              <div className="col-6">
+              <div className="col-lg-6 col-12">
                   <h3 className= "mb-4"> Your cart summary</h3>
                   <hr /><br />
                   <Checkout products= {items} setRun= {setRun} run= {run}/>
