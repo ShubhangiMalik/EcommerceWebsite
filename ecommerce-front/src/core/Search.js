@@ -80,7 +80,7 @@ const Search = () => {
 
 
    const searchForm = () => (
-       <form onSubmit= {searchSubmit}>
+       <form onSubmit= {searchSubmit} className='mx-0 '>
            <span className= 'input-group-text'>
                <div className="input-group">
                    <div className="input-group-prepend">
