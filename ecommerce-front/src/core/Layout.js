@@ -10,8 +10,8 @@ const Layout = ({ title = 'Title',
                   <div>
                     <Menu/>  
                     <div className= "jumbotron mt-4">
-                        <h2 className= 'mt-2'>{title}</h2>
-                        <p className='lead'>{description}</p>
+                        <h2 className= 'mt-5 mt-md-2 title'>{title}</h2>
+                        <p className='lead description'>{description}</p>
                     </div>
                     <div className = {className}>
                         {children}

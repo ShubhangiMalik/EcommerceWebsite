@@ -76,8 +76,8 @@
 }
 
 .jumbotron {
-    width: 30wh;
-    height: 40vh;
+    width: 40wh;
+    height: 47vh;
     color: #fff;
     background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab); 
     background-size: 400% 400%;
@@ -133,3 +133,51 @@
     
 }
 
+
+
+
+/* If the screen size is 601px wide or more, set the font-size of <div> to 80px */
+/* @media screen and (min-width: 601px) {
+    .description {
+      font-size: 17px;
+    }
+  } */
+  
+  /* If the screen size is 600px wide or less, set the font-size of <div> to 30px */
+   @media screen and (max-width: 600px) {
+    .description {
+      font-size: 13px;
+    }
+  }
+
+  /* @media screen and (min-width: 601px) {
+    .description {
+      font-size: 12px;
+    }
+  } */
+  
+  /* If the screen size is 600px wide or less, set the font-size of <div> to 30px */
+  @media screen and (max-width: 600px) {
+    .title {
+      font-size: 20px;
+    }
+  } 
+
+/*   
+  @media screen and (min-width: 601px) {
+    .nav-link {
+      font-size: 20px;
+    }
+  }
+  
+  /* If the screen size is 600px wide or less, set the font-size of <div> to 30px */
+  /* @media screen and (max-width: 600px) {
+    .nav-link{
+      font-size: 5px;
+    }
+  } */ 
+  /* @media screen and (max-width: 600px) {
+    .nav-link {
+      font-size: 10px;
+    }
+  }  */
