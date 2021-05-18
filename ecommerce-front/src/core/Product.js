@@ -40,8 +40,9 @@ return (
             title = {product && product.name}
             description = {
                   product && 
-                  product.description && 
-                  product.description.substring(0,100)
+                  product.description 
+                 // && 
+                  //product.description.substring(0,300)
                  }
             className='container-fluid'
         >
@@ -59,7 +60,7 @@ return (
                      {relatedProduct.map((p , i) => (
 
                          <div className="mb-4">
-                             <Card key= {i} product= {product}/>
+                             <Card key= {i} product= {p}/>
                          </div>
                      ))}
                 </div>

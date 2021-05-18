@@ -48,7 +48,7 @@ const Card = ({
         showAddToCartButton && (
             <button 
                 onClick= {addToCart} 
-                className= 'btn btn-outline-warning m-2'
+                className= 'btn btn-outline-warning my-2'
             >
                Add to Cart
             </button>
@@ -110,16 +110,17 @@ const Card = ({
     
     
     return(
+        //.substring(0,100)
         
             <div className="card my-3">
                 <div className="card-header name py-2" style= {{fontSize: '21px'}}> <b>{product.name}</b></div>
                 <div className="card-body">
                   {shouldRedirect(redirect)}
                   <ShowImage item= {product} url= 'product'/>  
-                    <p className= 'lead mt-2'><b>{product.description.substring(0,100)}</b></p>
-                    <p className= "black-10">Rs.{product.price}</p>
-                    <p className= 'black-9'>Category : {product.category && product.category.name}</p>
-                    <p className= 'black-8'>
+                    {/* <p className= ' mt-2'><b>{product.description}</b></p> */}
+                    <p className= "black-10 px-2">Rs.{product.price}</p>
+                    <p className= 'black-9 px-2'>Genre : {product.category && product.category.name}</p>
+                    <p className= 'black-8 px-2'>
                         Added {moment(product.createdAt).fromNow()}
                     </p>
                     

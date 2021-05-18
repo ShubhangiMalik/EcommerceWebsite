@@ -65,7 +65,7 @@ const Search = () => {
     
     const searchedProducts = (results = []) => {
       return(
-       <div>
+       <div className= 'ml-3'>
             <h4 className= 'mt-5 mb-4 text-center'>
                 {searchMessage(searched, results)}
             </h4>
