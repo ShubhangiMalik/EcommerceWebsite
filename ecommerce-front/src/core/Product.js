@@ -47,15 +47,15 @@ return (
             className='container-fluid'
         >
            
-             <div className="row justify-content-between">
-                <div className="col-7 mt-5">
+             <div className="row justify-content-around">
+                <div className="col-12 col-lg-6 mt-5">
                     {
                         product && 
                         product.description && 
                         <Card product= {product} showViewProductButton= {false}/>
                     }
                 </div>
-                <div className="col-4 mt-3">
+                <div className="col-12 col-lg-4 mt-3">
                     <h5 >Related Products </h5>
                      {relatedProduct.map((p , i) => (
 
