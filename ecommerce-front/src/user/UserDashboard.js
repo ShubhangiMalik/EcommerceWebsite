@@ -78,8 +78,8 @@ const Dashboard = () => {
                                             <h6>Product name: {p.name}</h6>
                                             <h6>Product price: Rs. {p.price}</h6>
                                             <h6>
-                                                Purchased {" "}
-                                                {moment(p.createdAt).fromNow()}
+                                                {/* Product Status: {p.status} */}
+                                                 {moment(p.createdAt).fromNow()}
                                             </h6>
                                         </div>
                                     );
