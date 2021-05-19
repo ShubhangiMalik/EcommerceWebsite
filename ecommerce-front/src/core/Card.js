@@ -119,7 +119,7 @@ const Card = ({
                   <ShowImage item= {product} url= 'product'/>  
                     {/* <p className= ' mt-2'><b>{product.description}</b></p> */}
                     <p className= "black-10 px-2">Rs.{product.price}</p>
-                    <p className= 'black-9 px-2'>Genre : {product.category && product.category.name}</p>
+                   {product.category.name && <p className= 'black-9 px-2'>Genre : {product.category && product.category.name}</p>}
                     <p className= 'black-8 px-2'>
                         Added {moment(product.createdAt).fromNow()}
                     </p>

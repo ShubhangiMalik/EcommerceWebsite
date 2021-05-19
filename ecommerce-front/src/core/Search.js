@@ -33,12 +33,13 @@ const Search = () => {
    const searchData = () => {
        //console.log(search, category)
        if(search){
-           list({search: search || undefined, category})
+           list({search: search || undefined, category: category})
            .then(response=> {
                 if(response.error){
                     console.log(response.error)
                 }else{
                     setData({...data, results: response, searched: true})
+                    console.log(response)
                 }
            })
        }
