@@ -184,7 +184,7 @@ setData({ ...data, error: error.message });
         className= 'alert alert-info' 
         style = {{display: success ? '' : 'none'}}
     >
-        Thanks ! Your payment was successful. Please check your inbox !!
+        Thank you! Your payment was successful. Please check your inbox !
     </div>
 
 )
