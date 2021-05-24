@@ -1,6 +1,7 @@
 const {Order, CartItem} = require('../models/order')
 const { errorhandler} = require('../helpers/dbErrorHandler')
 const apiKey = process.env.apiKey;
+const { SMTPClient } = require('emailjs');
 
 
 exports.orderById = (req , res , next , id) => {
@@ -17,19 +18,19 @@ exports.orderById = (req , res , next , id) => {
     })
 } 
 
-exports.create = (req, res) => {
-   // console.log('create order :' , req.body)
-   req.body.order.user = req.profile
-   const order = new Order(req.body.order)
-   order.save((error, data) => {
-       if(error) {
-           return res.status(400).json({
-               error:errorhandler(error)
-           })
-       }
-       res.json(data)
-   })
-}
+// exports.create = (req, res) => {
+//    // console.log('create order :' , req.body)
+//    req.body.order.user = req.profile
+//    const order = new Order(req.body.order)
+//    order.save((error, data) => {
+//        if(error) {
+//            return res.status(400).json({
+//                error:errorhandler(error)
+//            })
+//        }
+//        res.json(data)
+//    })
+// }
 
 exports.listOrders =(req , res) => {
     Order.find()
@@ -84,14 +85,14 @@ exports.create = (req, res) => {
             });
         }
         // User.find({ categories: { $in: categories } }).exec((err, users) => {}
-        console.log('ORDER IS JUST SAVED >>> ', order);
+       // console.log('ORDER IS JUST SAVED >>> ', order);
         // send email alert to admin
-        // order.address
-        // order.products.length
-        // order.amount
+       // order.address
+        //order.products.length
+        //order.amount
         const emailData = {
             to: 'shubhangimalik28@gmail.com', // admin
-            from: 'noreply@ecommerce.com',
+            from: 'shubhangimalik28@gmail.com',
             subject: `A new order is received`,
             html: `
             <h1>Hey Admin, Somebody just made a purchase in your ecommerce store</h1>
@@ -125,7 +126,7 @@ exports.create = (req, res) => {
         // email to buyer
         const emailData2 = {
             to: order.user.email,
-            from: 'noreply@ecommerce.com',
+            from: 'shubhangimalik28@gmail.com',
             subject: `You order is in process`,
             html: `
             <h1>Hey ${req.profile.name}, Thank you for shopping with us.</h1>
@@ -155,3 +156,57 @@ exports.create = (req, res) => {
         res.json(data);
     });
 };
+
+
+// exports.create = (req, res) => {
+//     req.body.order.user = req.profile;
+//     const order = new Order(req.body.order);
+
+
+// const client = new SMTPClient({
+// 	user: 'Shubhangi',
+// 	password: '8447666294',
+// 	host: 'smtp.shubhangimalik28@gmail.com',
+// 	ssl: true,
+// });
+
+// // send the message and get a callback with an error or details of the message that was sent
+// client.send(
+// 	{
+// 		text: 'i hope this works',
+// 		from: 'shubhangimalik28062000@gmail.com',
+// 		to: 'roop.malik@yahoo.com',
+// 	//	cc: 'else <else@your-email.com>',
+// 		subject: 'testing emailjs',
+// 	},
+// 	(err, message) => {
+// 		console.log(err || message);
+// 	}
+// );
+//}
+
+
+// var nodemailer = require('nodemailer');
+
+// var transporter = nodemailer.createTransport({
+//   service: 'gmail',
+//   auth: {
+//     user: 'shubhangimalik28@gmail.com',
+//     pass: process.env.PASSWORD
+//   }
+// });
+
+// var mailOptions = {.
+//   from: 'shubhangimalik286A@gmail.com',
+//   to: 'shubhangimalik28062000@gmail.com',
+//   subject: 'Sending Email using Node.js',
+//   text: 'That was easy!'
+// };
+
+// transporter.sendMail(mailOptions, function(error, info){
+//   if (error) {
+//     console.log(error);
+//   } else {
+//     console.log('Email sent: ' + info.response);
+//   }
+// });
